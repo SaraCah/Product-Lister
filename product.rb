@@ -5,7 +5,7 @@ class Product
 
     attr_writer :label_name, :type_name, :company_name
     attr_reader :rating_numbers, :addresses
-   
+
     def initialize
         @rating_numbers = [] #want and empty array to add for above and below
         @addresses = []
@@ -63,6 +63,7 @@ class Product
 
         full_name
     end
+
     def to_s(format = "full_name") #ohh its for the format of it
         case format
         when 'full_name' then full_name #if full name true prints the full name
