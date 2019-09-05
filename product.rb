@@ -73,3 +73,8 @@ class Product
             product_company #if everything just prints the product and company
         end
     end
+
+    def print_rating_numbers #method for printing  rating number printed
+        puts "Rating Numbers:" 
+        rating_numbers.each { |rating_number| puts rating_number }
+    end
