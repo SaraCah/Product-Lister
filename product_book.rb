@@ -86,3 +86,12 @@ class ProductBook
             return "Oops! That product didn't have product name or company name. Please try again." #ask about debugging because not showing
             add_product #loops back up to add product to do it right
 
+        else
+            loop do
+                reset_screen! #gets to the next input i want the user to fo
+                puts "Add rating number or location of where bought? "# option menu so user knows what to input
+                puts "p: Add rating number" 
+                puts "a: Add Address"
+                puts "b: Back to Main Menu"
+
+                input = gets.chomp.downcase #gets the user to put in p or a?
