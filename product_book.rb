@@ -36,7 +36,7 @@ class ProductBook
     def run
         loop do
             reset_screen! #first reset screen and displays my menu
-            puts 'Products List Main Menu'.red
+            puts 'Products List Main Menu'
             puts 'a: Add A Product'
             puts 'p: Print Product List'
             puts 's: Search Product List'
