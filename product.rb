@@ -47,11 +47,19 @@ class Product
 
         product_company
     end
-    
+
     def company_product #method for printing company_name, this was in test and i forgot why did it but think again sara
         company_product = company_name
         company_product += ", #{label_name}" unless @label_name.nil?
         company_product += " #{type_name.slice(0,1)}." unless @type_name.nil?
 
         company_product
+    end
+
+    def full_name #method for full name everything combined
+        full_name = label_name
+        full_name += " #{type_name}" unless @type_name.nil?
+        full_name += " #{company_name}" unless @company_name.nil?
+
+        full_name
     end
