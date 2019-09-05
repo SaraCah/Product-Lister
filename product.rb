@@ -29,4 +29,6 @@ class Product
         addresses << address #chucks the address into the empty array
     end
 
-
+    def label_name  #writer instance variable for label of product
+        @label_name
+    end
