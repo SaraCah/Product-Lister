@@ -32,3 +32,8 @@ class Product
     def label_name  #writer instance variable for label of product
         @label_name
     end
+    
+    def type_name  #writer instatnce variable for type of product
+        @type_name
+    end
+
