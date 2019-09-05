@@ -1,7 +1,9 @@
 require './product'
 require 'yaml' #this is so i can write my data to yaml file
+require 'colorize'
+# require 'asciiart'
 
-class ProductBook
+class ProductBook #the whole class to run the starting user profram
 
     attr_reader :products
 
@@ -36,7 +38,7 @@ class ProductBook
     def run
         loop do
             reset_screen! #first reset screen and displays my menu
-            puts 'Products List Main Menu'
+            puts 'Products List Main Menu'.red
             puts 'a: Add A Product'
             puts 'p: Print Product List'
             puts 's: Search Product List'
@@ -70,6 +72,7 @@ class ProductBook
             end
         end
     end
+
     def add_product  #adding product method
         reset_screen! #rests my screen
         product = Product.new #calls me product class
@@ -85,7 +88,6 @@ class ProductBook
         if product.label_name == "" && product.company_name == "" #for some reason this is not working so need to figure this out
             return "Oops! That product didn't have product name or company name. Please try again." #ask about debugging because not showing
             add_product #loops back up to add product to do it right
-
         else
             loop do
                 reset_screen! #gets to the next input i want the user to fo
@@ -95,6 +97,7 @@ class ProductBook
                 puts "b: Back to Main Menu"
 
                 input = gets.chomp.downcase #gets the user to put in p or a?
+
                 case input
                 when 'p' # if p
                     reset_screen!
@@ -125,11 +128,22 @@ class ProductBook
                     break #b will break the loop and return to main menu
                 end
             end
+
             products << product #adds product into product array
             puts "Product successfully added." #ok this line is not printing, don't know why but need to revist
         end
 
     end
+
+    def find_by_name(name) #method to find products by name
+        results = [] #want empty array 
+        search = name.downcase  #name is searched for
+        products.each do |product|
+            results << product if product.full_name.downcase.include?(search) #so searches for any name in products full_name defined in products and if search is good, chucks in the arrray
+        end
+        print_results("Name search results (#{name}):", results) #gives back the result with interpolation
+    end
+
     def find_by_rating_number(number)
         results  = []
         search = number.gsub('-','') #used gsub to find the - and replace with ''
