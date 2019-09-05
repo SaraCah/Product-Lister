@@ -95,3 +95,38 @@ class ProductBook
                 puts "b: Back to Main Menu"
 
                 input = gets.chomp.downcase #gets the user to put in p or a?
+                case input
+                when 'p' # if p
+                    reset_screen!
+                    rating = RatingNumber.new #is my rating class
+                    print "Please provide some comments about the product eg. was drying to the skin: " #want the user to make a comment so they understnad why they rating it like it is
+                    print ">" #just for formatting
+                    rating.kind = gets.chomp #calls kind method from Ratingnumber class on rating input
+                    print "Please give a number from 1-10 with 1 been the worst and 10 been the describe your product: "
+                    rating.number = gets.chomp  #gets the number between 1-10
+                    product.rating_numbers << rating #inserts the product rating number into the empty array on the RatingNumber class
+                when 'a'
+                    reset_screen!
+                    address = Address.new #class the address class
+                    print "Please provide an example of where you bought your product. Eg. Myer, Boutique, Sephora "
+                    address.kind = gets.chomp #i wanted to set up a kind of store where the person bought it for clarity to them
+                    print "Address line 1: " #next few lines is for full postal address
+                    address.street_1 = gets.chomp
+                    print "Address line 2: "
+                    address.street_2 = gets.chomp
+                    print "City: "
+                    address.city = gets.chomp
+                    print "State: "
+                    address.state = gets.chomp
+                    print "Postal Code: "
+                    address.postal_code = gets.chomp
+                    product.addresses << address #add the products address by calling address method and inserts it into empty address array
+                when 'b'
+                    break #b will break the loop and return to main menu
+                end
+            end
+            products << product #adds product into product array
+            puts "Product successfully added." #ok this line is not printing, don't know why but need to revist
+        end
+
+    end
