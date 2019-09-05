@@ -70,3 +70,19 @@ class ProductBook
             end
         end
     end
+    def add_product  #adding product method
+        reset_screen! #rests my screen
+        product = Product.new #calls me product class
+
+        puts "All products must have either a product name or company that produces it."
+        print 'Product name: ' #asking user to put in product name
+        product.label_name = gets.chomp
+        print 'Type of product. Eg. Mascara, Facial Wash: ' #ask user to give type of project
+        product.type_name = gets.chomp
+        print 'Company name: ' #ask user to input compnay name
+        product.company_name = gets.chomp
+
+        if product.label_name == "" && product.company_name == "" #for some reason this is not working so need to figure this out
+            return "Oops! That product didn't have product name or company name. Please try again." #ask about debugging because not showing
+            add_product #loops back up to add product to do it right
+
