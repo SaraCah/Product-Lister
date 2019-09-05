@@ -36,7 +36,14 @@ class Product
     def type_name  #writer instatnce variable for type of product
         @type_name
     end
-    
+
     def company_name #writer instance variable for company name of product
         @company_name
+    end
+
+    def product_company  #method for for printing label name, this was in test and i forgot why did it but think again sara
+        product_company = label_name
+        product_company += " #{company_name}" unless @company_name.nil?
+
+        product_company
     end
