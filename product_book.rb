@@ -130,3 +130,59 @@ class ProductBook
         end
 
     end
+    def find_by_rating_number(number)
+        results  = []
+        search = number.gsub('-','') #used gsub to find the - and replace with ''
+
+        products.each do |product|
+            product.rating_numbers.each do |rating_number|
+                if rating_number.number.gsub('-','').include?(search) #same as above
+                    results << product unless results.include?(product) #chucks the product into results
+                end
+            end
+        end
+
+        print_results("Rating search results (#{number}):", results) #returns the number and results
+    end
+
+    def find_by_address(query) #same as above if above fails goes to this
+        results  = [] #empty array
+        search = query.downcase #downcase
+
+        products.each do |product|
+            product.addresses.each do |address|
+                if address.to_s('long').downcase.include?(search) 
+                    results << product unless results.include?(product) #same as above for address
+                end
+            end
+        end
+
+        print_results("Address search results (#{query}):", results) #prints results
+    end
+
+    def print_label_list #method for printing list
+        reset_screen! #reset the screen
+        puts "Product List:"
+        products.each do |product| 
+            puts product.to_s('full_name') #returns full name so product, type and comapny
+        end
+
+        print "Press enter at any time to return to the Main Menu: "
+        gets #makes any button return
+    end
+
+    def print_results(search, results)  #prints full results from the search method
+        puts search #so basically when i have search for the prduct and program has found it i want to disaplay all other information about
+
+        results.each do |product|
+            puts product.to_s('full_name') #shoots out full name of product
+            product.print_rating_numbers #shoots out the rating
+            product.print_addresses #shoots out the addresses
+            puts
+        end
+    end
+
+end
+
+address_book = ProductBook.new #make the program run
+address_book.run
