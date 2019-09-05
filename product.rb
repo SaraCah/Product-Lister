@@ -78,3 +78,9 @@ class Product
         puts "Rating Numbers:" 
         rating_numbers.each { |rating_number| puts rating_number }
     end
+
+    def print_addresses #method for printing adress
+        puts "Addresses:"
+        addresses.each { |address| puts address.to_s('short') }
+    end
+end
