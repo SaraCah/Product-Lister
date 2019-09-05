@@ -36,3 +36,5 @@ When a user goes back to main menu they can now print their product list. If the
 
 From main menu the user has the option to search for a product they entered. The user can search by any information they have added and it will return the Product that contains that input. For example if the user searches for Revlon from our previous examples it will return the list of that products properties to help find it. For the future I want to add a way to search using the comments. For example if I rated by product a 9 and made a comment that it’s drying, I still have no way to search for that so it’s something that I will try to implement in the future.
 
+# Control Flow Diagram
+![ControlFlowDiagram](Controlflow.JPG)
