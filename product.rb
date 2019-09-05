@@ -63,3 +63,13 @@ class Product
 
         full_name
     end
+    def to_s(format = "full_name") #ohh its for the format of it
+        case format
+        when 'full_name' then full_name #if full name true prints the full name
+        when 'company_product' then company_product #if not than prints company_product method
+        when 'product' then label_name #if just have product than just prints label name
+        when 'company' then company_name #if just has company jsut prints company name
+        else
+            product_company #if everything just prints the product and company
+        end
+    end
