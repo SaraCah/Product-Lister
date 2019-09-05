@@ -47,3 +47,11 @@ class Product
 
         product_company
     end
+    
+    def company_product #method for printing company_name, this was in test and i forgot why did it but think again sara
+        company_product = company_name
+        company_product += ", #{label_name}" unless @label_name.nil?
+        company_product += " #{type_name.slice(0,1)}." unless @type_name.nil?
+
+        company_product
+    end
