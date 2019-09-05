@@ -18,4 +18,15 @@ class Product
         rating_numbers << rating_number #than chucks it into the empty array
     end
 
+    def add_address(kind, street_1, street_2 = nil, city, state, postal_code) #method to add in address
+        address = Address.new #calls upon address calss
+        address.kind = kind #kind of address, could have used better word really but is to stand for department stores,
+        address.street_1 = street_1 #next few lines just the postal code
+        address.street_2 = street_2
+        address.city = city
+        address.state = state
+        address.postal_code = postal_code
+        addresses << address #chucks the address into the empty array
+    end
+
 
