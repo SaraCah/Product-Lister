@@ -1,0 +1,25 @@
+# Instructions for Product Lister
+
+1. Download current repository
+
+2. Run product_book.rb
+
+3. User will be presented with menu screen to do following options to put in following options
+a) Add a product
+p) Print product list
+s) Search Product list
+e) Save & Exit
+
+
+3. If user presses a will have the option to add a product. 
+User will be prompted to give Label Name, Product Type and Company name
+After added the user will be taken to a screen to add rating and comment or address
+If user inputs rating will be prompted to comment and give a number
+If address user will be asked to add address where they bought it
+After each of these options have the ability to go back to main screen
+
+4. If user is back to main menu and presses p, will print the product list stored and press any button to go back to menu
+
+5. If press search product list, user can input anything and it returns the full product
+
+6. Save and exit
